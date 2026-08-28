@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eletrotech Marechal — Sistemas Elétricos</title>
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Ícones Lucide (CDN) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="lang-pt">
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="wrap">
+
+      <!-- Logo -->
+      <button class="nav-logo" onclick="ir('home')" aria-label="Ir para o início">
+        <svg viewBox="0 0 500 105" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="4" y="80" fill="white" font-family="'Bebas Neue',sans-serif" font-size="84"
+            letter-spacing="4">ELETR</text>
+          <circle cx="252" cy="46" r="44" fill="#f07828" />
+          <circle cx="252" cy="46" r="44" fill="none" stroke="white" stroke-width="4" />
+          <path d="M264,18 L240,52 L254,52 L238,74 L264,40 L250,40 Z" fill="white" />
+          <text x="298" y="80" fill="white" font-family="'Bebas Neue',sans-serif" font-size="84"
+            letter-spacing="4">TECH</text>
+          <text x="222" y="103" fill="#f07828" font-family="'Dancing Script','Brush Script MT',cursive" font-size="36"
+            font-weight="700">Marechal</text>
+        </svg>
+      </button>
+
+      <!-- Links de navegação (desktop) -->
+      <ul class="nav-links">
+        <li>
+          <button onclick="ir('home')" class="nav-btn ativo" data-page="home">
+            <span class="pt">Início</span><span class="es">Inicio</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="ir('sobre')" class="nav-btn" data-page="sobre">Sobre</button>
+        </li>
+        <li>
+          <button onclick="ir('piscicultura')" class="nav-btn" data-page="piscicultura">Piscicultura</button>
+        </li>
+        <li>
+          <button onclick="ir('produtos')" class="nav-btn" data-page="produtos">
+            <span class="pt">Produtos</span><span class="es">Productos</span>
+          </button>
+        </li>
+        <li>
+          <button onclick="ir('faq')" class="nav-btn" data-page="faq">FAQ</button>
+        </li>
+        <li>
+          <button onclick="ir('contato')" class="nav-btn" data-page="contato">
+            <span class="pt">Contato</span><span class="es">Contacto</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Switcher de idioma + hamburger -->
+      <div class="nav-dir">
+        <div class="lang-sw">
+          <button onclick="setLang('pt')" class="lang-btn ativo" data-lang="pt">PT</button>
+          <button onclick="setLang('es')" class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+          <i data-lucide="menu" style="width:22px;height:22px"></i>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Menu mobile -->
+  <div class="menu-mobile" id="menu-mobile">
+    <div class="menu-mobile-links">
+      <button onclick="ir('home')" class="ativo" data-page="home">
+        <i data-lucide="home"></i>
+        <span><span class="pt">Início</span><span class="es">Inicio</span></span>
+      </button>
+      <button onclick="ir('sobre')" data-page="sobre">
+        <i data-lucide="info"></i>
+        <span><span class="pt">Sobre Nós</span><span class="es">Sobre Nosotros</span></span>
+      </button>
+      <button onclick="ir('piscicultura')" data-page="piscicultura">
+        <i data-lucide="fish"></i>
+        <span>Piscicultura</span>
+      </button>
+      <button onclick="ir('produtos')" data-page="produtos">
+        <i data-lucide="package"></i>
+        <span><span class="pt">Equipamentos</span><span class="es">Equipos</span></span>
+      </button>
+      <button onclick="ir('faq')" data-page="faq">
+        <i data-lucide="help-circle"></i>
+        <span>FAQ</span>
+      </button>
+      <button onclick="ir('contato')" data-page="contato">
+        <i data-lucide="phone"></i>
+        <span><span class="pt">Informações &amp; Contato</span><span class="es">Información &amp; Contacto</span></span>
+      </button>
+    </div>
+
+    <div class="menu-mobile-footer">
+      <a href="https://wa.me/5565999999999?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento" target="_blank"
+        class="btn btn-laranja btn-bloco">
+        <i data-lucide="message-circle" style="width:18px;height:18px"></i>
+        <span class="pt">Falar no WhatsApp</span><span class="es">Hablar por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     PÁGINA: HOME
+══════════════════════════════════════════════════════════════════ -->
+  <div id="pg-home" class="pagina ativa">
+
+    <!-- ── Hero ────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+
+      <div class="wrap">
+        <div class="hero-inner">
+
+          <div class="hero-badge">
+            <i data-lucide="zap" style="width:12px;height:12px"></i>
+            <span class="pt">Quase 7 Anos no Mercado</span>
+            <span class="es">Casi 7 Años en el Mercado</span>
+          </div>
+
+          <h1>
+            <span class="pt">Tecnologia Elétrica<br><span style="color:var(--orange)">para Quem Produz</span></span>
+            <span class="es">Tecnología Eléctrica<br><span style="color:var(--orange)">para Quienes
+                Producen</span></span>
+          </h1>
+
+          <p>
+            <span class="pt">Instalação de sondas em piscicultura, automação industrial e manutenção elétrica. Do campo
+              à indústria.</span>
+            <span class="es">Instalación de sondas en piscicultura, automatización industrial y mantenimiento eléctrico.
+              Del campo a la industria.</span>
+          </p>
+
+          <div class="hero-btns">
+            <!-- ⚠️ Troque 5565999999999 pelo número real -->
+            <a href="https://wa.me/5565999999999?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento" target="_blank"
+              class="btn btn-laranja">
+              <i data-lucide="message-circle" style="width:16px;height:16px"></i>
+              <span class="pt">Falar no WhatsApp</span><span class="es">Hablar por WhatsApp</span>
+            </a>
+            <button class="btn btn-borda"
+              onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'})">
+              <span class="pt">Nossos Serviços</span><span class="es">Nuestros Servicios</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="wrap">
+          <div class="stat-item">
+            <span class="stat-v">7</span>
+            <span class="stat-l pt">Anos de experiência</span>
+            <span class="stat-l es">Años de experiencia</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-v">200+</span>
+            <span class="stat-l pt">Projetos realizados</span>
+            <span class="stat-l es">Proyectos realizados</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-v">MT+PY</span>
+            <span class="stat-l pt">Regiões atendidas</span>
+            <span class="stat-l es">Regiones atendidas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Serviços / Áreas de Atuação ──── -->
+    <section class="secao" id="servicos">
+      <div class="wrap">
+
+        <div class="sec-centro">
+          <span class="sec-label pt">Engenharia &amp; Tecnologia</span>
+          <span class="sec-label es">Ingeniería &amp; Tecnología</span>
+          <h2 class="sec-titulo pt">Áreas de Atuação</h2>
+          <h2 class="sec-titulo es">Áreas de Actuación</h2>
+          <p class="sec-sub pt">Soluções elétricas e industriais sob medida para o agronegócio e a indústria</p>
+          <p class="sec-sub es">Soluciones eléctricas e industriales a medida para el agronegocio y la industria</p>
+        </div>
+
+        <div class="grade-atuacao">
+
+          <!-- Card 01: Manutenção Elétrica -->
+          <div class="atuacao-card">
+            <div class="atuacao-topo">
+              <div class="atuacao-tag-area">
+                <span class="atuacao-num">// 01</span>
+                <span class="atuacao-badge pt">Engenharia Elétrica</span>
+                <span class="atuacao-badge es">Ingeniería Eléctrica</span>
+              </div>
+              <div class="atuacao-icone">
+                <i data-lucide="wrench"></i>
+              </div>
+            </div>
+
+            <div class="atuacao-conteudo">
+              <h3 class="atuacao-titulo pt">Manutenção Elétrica Preventiva &amp; Corretiva</h3>
+              <h3 class="atuacao-titulo es">Mantenimiento Eléctrico Preventivo &amp; Correctivo</h3>
+
+              <p class="atuacao-desc pt">
+                Serviços completos de manutenção elétrica industrial e rural, com diagnóstico por termografia para
+                identificar falhas antes que se tornem prejuízo. Cada intervenção é documentada com laudo técnico,
+                seguindo os padrões da NR-10.
+              </p>
+              <p class="atuacao-desc es">
+                Servicios completos de mantenimiento eléctrico industrial y rural, con diagnóstico por termografía para
+                identificar fallas antes de que generen pérdidas. Cada intervención se documenta con informe técnico,
+                siguiendo los estándares de la norma NR-10.
+              </p>
+
+              <div class="atuacao-tags">
+                <span class="tag-item">Termografia</span>
+                <span class="tag-item"><span class="pt">Preventiva &amp; Corretiva</span><span class="es">Prev. y
+                    Correctiva</span></span>
+                <span class="tag-item"><span class="pt">Laudos Técnicos</span><span class="es">Informes
+                    Técnicos</span></span>
+                <span class="tag-item"><span class="pt">Adequação NR-10</span><span class="es">Norma NR-10</span></span>
+              </div>
+            </div>
+
+            <div class="atuacao-rodape">
+              <a href="https://wa.me/5565999999999?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento%20para%20Manuten%C3%A7%C3%A3o%20El%C3%A9trica"
+                target="_blank" class="atuacao-link">
+                <span class="pt">Solicitar Atendimento</span>
+                <span class="es">Solicitar Atención</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 02: Automação Industrial -->
+          <div class="atuacao-card">
+            <div class="atuacao-topo">
+              <div class="atuacao-tag-area">
+                <span class="atuacao-num">// 02</span>
+                <span class="atuacao-badge pt">Automação &amp; Controle</span>
+                <span class="atuacao-badge es">Automatización &amp; Control</span>
+              </div>
+              <div class="atuacao-icone">
+                <i data-lucide="settings"></i>
+              </div>
+            </div>
+
+            <div class="atuacao-conteudo">
+              <h3 class="atuacao-titulo pt">Automação Industrial &amp; Processos</h3>
+              <h3 class="atuacao-titulo es">Automatización Industrial &amp; Procesos</h3>
+
+              <p class="atuacao-desc pt">
+                Projetos e programação de sistemas automatizados para aumento da eficiência produtiva e redução de
+                custos operacionais. Integração de CLPs, inversores de frequência e sistemas supervisórios SCADA.
+              </p>
+              <p class="atuacao-desc es">
+                Proyectos y programación de sistemas automatizados para aumentar la eficiencia productiva y reducir
+                costos operativos. Integración de PLCs, variadores de frecuencia y supervisión SCADA.
+              </p>
+
+              <div class="atuacao-tags">
+                <span class="tag-item">Programação de CLPs</span>
+                <span class="tag-item">Inversores de Frequência</span>
+                <span class="tag-item">Supervisórios SCADA</span>
+                <span class="tag-item"><span class="pt">Otimização de Linha</span><span
+                    class="es">Optimización</span></span>
+              </div>
+            </div>
+
+            <div class="atuacao-rodape">
+              <a href="https://wa.me/5544997656638?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento%20para%20Automa%C3%A7%C3%A3o%20Industrial"
+                target="_blank" class="atuacao-link">
+                <span class="pt">Solicitar Atendimento</span>
+                <span class="es">Solicitar Atención</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 03: Piscicultura & Sondas -->
+          <div class="atuacao-card">
+            <div class="atuacao-topo">
+              <div class="atuacao-tag-area">
+                <span class="atuacao-num">// 03</span>
+                <span class="atuacao-badge">O₂XilifeFish</span>
+              </div>
+              <div class="atuacao-icone">
+                <i data-lucide="fish"></i>
+              </div>
+            </div>
+
+            <div class="atuacao-conteudo">
+              <h3 class="atuacao-titulo pt">Piscicultura Inteligente &amp; Sondas</h3>
+              <h3 class="atuacao-titulo es">Piscicultura Inteligente &amp; Sondas</h3>
+
+              <p class="atuacao-desc pt">
+                Monitoramento contínuo e em tempo real da qualidade da água em tanques e viveiros. Instalação de sondas
+                multiparâmetros para medição de oxigênio dissolvido (O₂), temperatura e pH com alertas no celular.
+              </p>
+              <p class="atuacao-desc es">
+                Monitoreo continuo y en tiempo real de la calidad del agua en tanques y estanques. Instalación de sondas
+                multiparámetro para medir oxígeno disuelto (O₂), temperatura y pH con alertas móviles.
+              </p>
+
+              <div class="atuacao-tags">
+                <span class="tag-item">Monitoramento 24/7</span>
+                <span class="tag-item">Oxigênio Dissolvido (O₂)</span>
+                <span class="tag-item">pH &amp; Temperatura</span>
+                <span class="tag-item"><span class="pt">Alertas Automáticos</span><span class="es">Alertas
+                    Automáticas</span></span>
+              </div>
+            </div>
+
+            <div class="atuacao-rodape">
+              <button onclick="ir('piscicultura')" class="atuacao-link" style="background:none;border:none;padding:0">
+                <span class="pt">Conhecer Soluções em Piscicultura</span>
+                <span class="es">Ver Soluciones en Piscicultura</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 04: Painéis de Comando -->
+          <div class="atuacao-card">
+            <div class="atuacao-topo">
+              <div class="atuacao-tag-area">
+                <span class="atuacao-num">// 04</span>
+                <span class="atuacao-badge pt">Painéis &amp; CCMs</span>
+                <span class="atuacao-badge es">Tableros &amp; CCMs</span>
+              </div>
+              <div class="atuacao-icone">
+                <i data-lucide="layout-grid"></i>
+              </div>
+            </div>
+
+            <div class="atuacao-conteudo">
+              <h3 class="atuacao-titulo pt">Painéis de Comando &amp; Distribuição</h3>
+              <h3 class="atuacao-titulo es">Tableros de Comando &amp; Distribución</h3>
+
+              <p class="atuacao-desc pt">
+                Engenharia, projeto e montagem de quadros elétricos de comando, centros de controle de motores (CCMs) e
+                quadros de distribuição sob medida, com barramentos protegidos e acabamento técnico de alto padrão.
+              </p>
+              <p class="atuacao-desc es">
+                Ingeniería, diseño y montaje de tableros eléctricos de comando, centros de control de motores (CCM) y
+                distribución a medida, con barras protegidas y terminación técnica de alta calidad.
+              </p>
+
+              <div class="atuacao-tags">
+                <span class="tag-item">Montagem Sob Medida</span>
+                <span class="tag-item">Centros de Controle (CCMs)</span>
+                <span class="tag-item">Partidas Suaves</span>
+                <span class="tag-item"><span class="pt">Proteção &amp; Segurança</span><span
+                    class="es">Protección</span></span>
+              </div>
+            </div>
+
+            <div class="atuacao-rodape">
+              <a href="https://wa.me/5565999999999?text=Ol%C3%A1%2C%20gostaria%20de%20um%20projeto%20de%20Painel%20de%20Comando"
+                target="_blank" class="atuacao-link">
+                <span class="pt">Solicitar Orçamento de Painel</span>
+                <span class="es">Solicitar Presupuesto</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ── Equipamentos (destaque rápido) ──── -->
+    <section class="secao-alt">
+      <div class="wrap">
+        <div class="card" style="max-width:420px;margin:0 auto;text-align:center">
+          <div class="card-icone" style="margin:0 auto 1rem"><i data-lucide="package"></i></div>
+          <h4 class="pt">Equipamentos</h4>
+          <h4 class="es">Equipos</h4>
+          <p class="pt">Venda de equipamentos com suporte técnico especializado</p>
+          <p class="es">Venta de equipos con soporte técnico especializado</p>
+          <button onclick="ir('produtos')" class="btn btn-ciano" style="margin-top:1rem">
+            <span class="pt">Ver Equipamentos</span><span class="es">Ver Equipos</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Destaque Piscicultura ───────────── -->
+    <section class="destaque">
+      <div class="wrap">
+        <div class="grade-2">
+
+          <div>
+            <span class="sec-label pt">Especialidade</span>
+            <span class="sec-label es">Especialidad</span>
+
+            <h2 class="sec-titulo pt">Soluções para Piscicultura</h2>
+            <h2 class="sec-titulo es">Soluciones para Piscicultura</h2>
+
+            <p class="sec-sub pt">Instalamos sondas inteligentes nos tanques para monitorar temperatura, O₂ e pH em
+              tempo real.</p>
+            <p class="sec-sub es">Instalamos sondas inteligentes en los tanques para monitorear temperatura, O₂ y pH en
+              tiempo real.</p>
+
+            <ul class="check-lista" style="margin-top:1.25rem">
+              <li>
+                <i data-lucide="check-circle"></i>
+                <span class="pt">Monitoramento 24/7</span><span class="es">Monitoreo 24/7</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle"></i>
+                <span class="pt">Alertas automáticos</span><span class="es">Alertas automáticas</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle"></i>
+                <span class="pt">Reduz mortalidade</span><span class="es">Reduce mortalidad</span>
+              </li>
+              <li>
+                <i data-lucide="check-circle"></i>
+                <span class="pt">Fácil de operar</span><span class="es">Fácil de operar</span>
+              </li>
+            </ul>
+
+            <button class="btn btn-ciano" style="margin-top:.5rem" onclick="ir('piscicultura')">
+              <span class="pt">Saiba mais</span><span class="es">Saber más</span>
+            </button>
+          </div>
+
+          <div>
+            <!-- ⚠️ Para usar foto própria: src="img/foto-tanques.jpg" -->
+            <div class="img-box" style="aspect-ratio:4/3">
+              <img src="https://images.unsplash.com/photo-1562486673-fd4c78226bf4?w=800&h=600&fit=crop"
+                alt="Tanques de piscicultura" />
+              <div class="live-pill">
+                <span class="pulse"></span>
+                <span>O₂: 6.8 mg/L &middot; Temp: 28°C &middot; pH: 7.2</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Depoimento + Vídeo ──────────────── -->
+    <section class="secao">
+      <div class="wrap">
+        <div class="grade-2" style="align-items:stretch">
+
+          <!-- Depoimento -->
+          <div class="depo-card">
+            <div>
+              <h3 style="font-size:1.3rem;margin-bottom:1.5rem" class="pt">O que nossos clientes dizem</h3>
+              <h3 style="font-size:1.3rem;margin-bottom:1.5rem" class="es">Lo que dicen nuestros clientes</h3>
+
+              <p class="depo-texto pt">"A Eletrotech Marechal transformou minha piscicultura. Com as sondas instaladas
+                tenho controle total da qualidade da água em tempo real. Serviço de excelência!"</p>
+              <p class="depo-texto es">"Eletrotech Marechal transformó mi piscicultura. Con las sondas instaladas tengo
+                control total de la calidad del agua en tiempo real. ¡Excelente servicio!"</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">JM</div>
+              <div>
+                <div style="font-size:.875rem;font-weight:600">João Mendes</div>
+                <div style="font-size:.75rem;color:var(--muted)" class="pt">Produtor Rural — Mato Grosso</div>
+                <div style="font-size:.75rem;color:var(--muted)" class="es">Productor Rural — Mato Grosso</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vídeo -->
+          <div class="card">
+            <h3 style="font-size:1.3rem;margin-bottom:.4rem" class="pt">Veja como trabalhamos</h3>
+            <h3 style="font-size:1.3rem;margin-bottom:.4rem" class="es">Véalo en la práctica</h3>
+
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" class="pt">Depoimento de cliente sobre
+              instalação de sondas</p>
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" class="es">Testimonio sobre instalación
+              de sondas</p>
+
+            <!-- ⚠️ Adicione o embed do YouTube aqui quando tiver o link -->
+            <div class="video-box">
+              <img src="https://images.unsplash.com/photo-1723134085909-19da487ac9bd?w=700&h=400&fit=crop"
+                alt="Preview vídeo" />
+              <button class="play-btn"><i data-lucide="play" style="color:white;fill:white"></i></button>
+              <span class="video-nota">[ Adicionar link do vídeo ]</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────── -->
+    <div class="cta-banner">
+      <div class="wrap">
+        <h2 class="pt">Pronto para modernizar sua produção?</h2>
+        <h2 class="es">¿Listo para modernizar su producción?</h2>
+
+        <p class="pt">Entre em contato e receba um orçamento personalizado.</p>
+        <p class="es">Contáctenos y reciba un presupuesto personalizado.</p>
+
+        <a href="https://wa.me/5565999999999" target="_blank" class="btn btn-laranja" style="font-size:1rem">
+          <i data-lucide="message-circle" style="width:18px;height:18px"></i>
+          <span class="pt">Solicitar Orçamento</span><span class="es">Solicitar Presupuesto</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     PÁGINA: SOBRE
+══════════════════════════════════════════════════════════════════ -->
+  <div id="pg-sobre" class="pagina">
+
+    <!-- ── Cabeçalho ───────────────────────── -->
+    <div class="pg-header">
+      <div class="wrap">
+        <span class="sec-label">Eletrotech Marechal</span>
+        <h1 class="pt">Nossa História</h1>
+        <h1 class="es">Nuestra Historia</h1>
+        <p class="pt">De uma visão empreendedora a referência em sistemas elétricos</p>
+        <p class="es">De una visión emprendedora a referencia en sistemas eléctricos</p>
+      </div>
+    </div>
+
+    <!-- ── Texto + Foto ────────────────────── -->
+    <section class="secao">
+      <div class="wrap">
+        <div class="grade-2">
+
+          <div>
+            <p style="color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:1.25rem" class="pt">A Eletrotech
+              Marechal nasceu da necessidade de oferecer soluções elétricas de alta qualidade para o agronegócio e a
+              indústria regional. Com quase 7 anos de mercado, consolidamos nossa presença atendendo produtores rurais,
+              piscicultores e indústrias com seriedade e excelência técnica.</p>
+            <p style="color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:1.25rem" class="es">Eletrotech Marechal
+              nació de la necesidad de ofrecer soluciones eléctricas de alta calidad para el agronegocio y la industria
+              regional. Con casi 7 años en el mercado, consolidamos nuestra presencia atendiendo productores rurales,
+              piscicultores e industrias.</p>
+
+            <p style="color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:1.25rem" class="pt">Nos últimos 2 anos,
+              expandimos nossas operações para projetos inovadores em piscicultura — especialmente instalação de sondas
+              em tanques —, além de automação industrial e montagem de painéis.</p>
+            <p style="color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:1.25rem" class="es">En los últimos 2
+              años expandimos operaciones hacia proyectos innovadores en piscicultura — especialmente instalación de
+              sondas en tanques —, además de automatización y montaje de tableros.</p>
+
+            <p style="color:rgba(255,255,255,.82);line-height:1.8" class="pt">Nosso compromisso com a qualidade nos
+              levou a planejar a expansão para o mercado paraguaio.</p>
+            <p style="color:rgba(255,255,255,.82);line-height:1.8" class="es">Nuestro compromiso con la calidad nos
+              llevó a planificar la expansión al mercado paraguayo.</p>
+          </div>
+
+          <!-- ⚠️ Para usar foto própria: src="img/foto-equipe.jpg" -->
+          <div class="img-box" style="aspect-ratio:1">
+            <img src="https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=600&h=600&fit=crop"
+              alt="Técnico Eletrotech" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Experiência em Números ──────────── -->
+    <section class="secao-alt">
+      <div class="wrap">
+        <h2 class="sec-titulo" style="text-align:center;margin-bottom:2rem">
+          <span class="pt">Experiência em Números</span>
+          <span class="es">Experiencia en Números</span>
+        </h2>
+        <div class="grade-4">
+          <div class="num-card">
+            <span class="num-v">7</span>
+            <span class="num-l pt">anos no mercado</span>
+            <span class="num-l es">años en el mercado</span>
+          </div>
+          <div class="num-card">
+            <span class="num-v">2</span>
+            <span class="num-l pt">anos na operação atual</span>
+            <span class="num-l es">años en la op. actual</span>
+          </div>
+          <div class="num-card">
+            <span class="num-v">200+</span>
+            <span class="num-l pt">projetos concluídos</span>
+            <span class="num-l es">proyectos concluidos</span>
+          </div>
+          <div class="num-card">
+            <span class="num-v">PY</span>
+            <span class="num-l pt">próxima expansão</span>
+            <span class="num-l es">próxima expansión</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Nosso Compromisso ───────────────── -->
+    <section class="secao">
+      <div class="wrap">
+
+        <div class="sec-centro">
+          <h2 class="sec-titulo pt">Nosso Compromisso</h2>
+          <h2 class="sec-titulo es">Nuestro Compromiso</h2>
+          <p class="sec-sub pt">Levar tecnologia elétrica confiável a quem produz — com atendimento personalizado e
+            soluções que funcionam no campo e na indústria.</p>
+          <p class="sec-sub es">Llevar tecnología eléctrica confiable a quienes producen — con atención personalizada y
+            soluciones que funcionan en el campo y en la industria.</p>
+        </div>
+
+        <div class="grade-3">
+          <div class="val-card">
+            <div class="val-icone"><i data-lucide="shield"></i></div>
+            <h4 class="pt">Confiança</h4>
+            <h4 class="es">Confianza</h4>
+            <p class="pt">Cumprimos prazos e entregamos o que prometemos</p>
+            <p class="es">Cumplimos plazos y entregamos lo prometido</p>
+          </div>
+          <div class="val-card">
+            <div class="val-icone"><i data-lucide="activity"></i></div>
+            <h4 class="pt">Excelência Técnica</h4>
+            <h4 class="es">Excelencia Técnica</h4>
+            <p class="pt">Equipe qualificada com soluções atualizadas</p>
+            <p class="es">Equipo calificado con soluciones actualizadas</p>
+          </div>
+          <div class="val-card">
+            <div class="val-icone"><i data-lucide="users"></i></div>
+            <h4 class="pt">Parceria</h4>
+            <h4 class="es">Asociación</h4>
+            <p class="pt">Atendimento próximo e personalizado a cada cliente</p>
+            <p class="es">Atención cercana y personalizada a cada cliente</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Banner Expansão Paraguai ────────── -->
+    <div class="exp-banner">
+      <div class="wrap">
+        <div class="exp-inner">
+          <div class="exp-icone">
+            <i data-lucide="globe" style="width:30px;height:30px"></i>
+          </div>
+          <div>
+            <h3 style="font-size:1.6rem;margin-bottom:.5rem" class="pt">Expansão para o Paraguai</h3>
+            <h3 style="font-size:1.6rem;margin-bottom:.5rem" class="es">Expansión a Paraguay</h3>
+            <p style="color:var(--muted);max-width:560px" class="pt">Estamos preparando nossa entrada no mercado
+              paraguaio, levando a expertise em piscicultura e automação para produtores além da fronteira.</p>
+            <p style="color:var(--muted);max-width:560px" class="es">Estamos preparando nuestra entrada al mercado
+              paraguayo, llevando la experiencia en piscicultura y automatización a productores más allá de la frontera.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     PÁGINA: PISCICULTURA
+══════════════════════════════════════════════════════════════════ -->
+  <div id="pg-piscicultura" class="pagina">
+
+    <!-- ── Cabeçalho ───────────────────────── -->
+    <div class="pg-header">
+      <div class="wrap">
+        <span class="sec-label">O₂XilifeFish</span>
+        <h1 class="pt">Piscicultura &amp; Sondas</h1>
+        <h1 class="es">Piscicultura &amp; Sondas</h1>
+        <p class="pt">Tecnologia de monitoramento para maximizar sua produção</p>
+        <p class="es">Tecnología de monitoreo para maximizar su producción</p>
+      </div>
+    </div>
+
+    <!-- ── Descrição + Parâmetros ──────────── -->
+    <section class="secao">
+      <div class="wrap">
+        <div class="grade-2">
+
+          <div>
+            <p style="color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:1.5rem" class="pt">A qualidade da água é
+              o fator mais crítico para o sucesso da piscicultura. Instalamos sondas diretamente nos tanques para
+              monitorar os parâmetros essenciais em tempo real.</p>
+            <p style="color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:1.5rem" class="es">La calidad del agua
+              es el factor más crítico para el éxito de la piscicultura. Instalamos sondas directamente en los tanques
+              para monitorear los parámetros esenciales en tiempo real.</p>
+
+            <div class="params-box">
+              <h5 class="pt">Parâmetros monitorados</h5>
+              <h5 class="es">Parámetros monitoreados</h5>
+              <div class="param-linha"><span class="dot"></span>Oxigênio Dissolvido (O₂)</div>
+              <div class="param-linha"><span class="dot"></span><span class="pt">Temperatura da Água</span><span
+                  class="es">Temperatura del Agua</span></div>
+              <div class="param-linha"><span class="dot"></span>pH</div>
+              <div class="param-linha"><span class="dot"></span><span class="pt">Condutividade</span><span
+                  class="es">Conductividad</span></div>
+              <div class="param-linha"><span class="dot"></span><span class="pt">Turbidez</span><span
+                  class="es">Turbidez</span></div>
+            </div>
+          </div>
+
+          <div class="img-box" style="aspect-ratio:4/3">
+            <img src="https://images.unsplash.com/photo-1562486673-fd4c78226bf4?w=800&h=600&fit=crop"
+              alt="Tanque de piscicultura com sonda" />
+            <div class="live-pill">
+              <span class="pulse"></span>
+              <span>Monitoramento ativo &middot; O₂: 6.8 &middot; pH: 7.2</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Passos da Instalação ────────────── -->
+    <section class="secao-alt">
+      <div class="wrap">
+
+        <div class="sec-centro">
+          <h2 class="sec-titulo pt">Como Funciona a Instalação</h2>
+          <h2 class="sec-titulo es">Cómo Funciona la Instalación</h2>
+        </div>
+
+        <div class="grade-4">
+          <div class="passo-card">
+            <div class="passo-num">01</div>
+            <h4 class="pt">Análise do Tanque</h4>
+            <h4 class="es">Análisis del Tanque</h4>
+            <p class="pt">Avaliamos dimensões e características para definir o ponto ideal de instalação.</p>
+            <p class="es">Evaluamos dimensiones y características para definir el punto ideal de instalación.</p>
+          </div>
+          <div class="passo-card">
+            <div class="passo-num">02</div>
+            <h4 class="pt">Instalação</h4>
+            <h4 class="es">Instalación</h4>
+            <p class="pt">Instalamos com cabeamento protegido, garantindo durabilidade e precisão.</p>
+            <p class="es">Instalamos con cableado protegido, garantizando durabilidad y precisión.</p>
+          </div>
+          <div class="passo-card">
+            <div class="passo-num">03</div>
+            <h4 class="pt">Configuração</h4>
+            <h4 class="es">Configuración</h4>
+            <p class="pt">Configuramos alertas e conectamos ao sistema de monitoramento.</p>
+            <p class="es">Configuramos alertas y conectamos al sistema de monitoreo.</p>
+          </div>
+          <div class="passo-card">
+            <div class="passo-num">04</div>
+            <h4 class="pt">Monitoramento</h4>
+            <h4 class="es">Monitoreo</h4>
+            <p class="pt">Acompanhe O₂, temperatura, pH e mais em tempo real pelo celular.</p>
+            <p class="es">Acompañe O₂, temperatura, pH y más en tiempo real por el móvil.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Benefícios + Vídeo ──────────────── -->
+    <section class="secao">
+      <div class="wrap">
+
+        <div class="sec-centro">
+          <h2 class="sec-titulo pt">Por que Monitorar?</h2>
+          <h2 class="sec-titulo es">¿Por qué Monitorear?</h2>
+        </div>
+
+        <div class="grade-3" style="margin-bottom:3rem">
+          <div class="ben-item">
+            <i data-lucide="check-circle"></i>
+            <span class="pt">Reduz mortalidade de peixes</span>
+            <span class="es">Reduce mortalidad de peces</span>
+          </div>
+          <div class="ben-item">
+            <i data-lucide="check-circle"></i>
+            <span class="pt">Detecta problemas antes de virar prejuízo</span>
+            <span class="es">Detecta problemas antes de generar pérdidas</span>
+          </div>
+          <div class="ben-item">
+            <i data-lucide="check-circle"></i>
+            <span class="pt">Otimiza o uso de aeradores</span>
+            <span class="es">Optimiza el uso de aireadores</span>
+          </div>
+          <div class="ben-item">
+            <i data-lucide="check-circle"></i>
+            <span class="pt">Dados em tempo real no celular</span>
+            <span class="es">Datos en tiempo real en el móvil</span>
+          </div>
+          <div class="ben-item">
+            <i data-lucide="check-circle"></i>
+            <span class="pt">Aumenta produtividade do cultivo</span>
+            <span class="es">Aumenta productividad del cultivo</span>
+          </div>
+          <div class="ben-item">
+            <i data-lucide="check-circle"></i>
+            <span class="pt">Retorno rápido do investimento</span>
+            <span class="es">Retorno rápido de la inversión</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.4rem;margin-bottom:.4rem" class="pt">Veja na Prática</h3>
+          <h3 style="font-size:1.4rem;margin-bottom:.4rem" class="es">Véalo en la Práctica</h3>
+
+          <p style="color:var(--muted);font-size:.875rem;margin-bottom:1.25rem" class="pt">Depoimento de produtor sobre
+            os resultados obtidos</p>
+          <p style="color:var(--muted);font-size:.875rem;margin-bottom:1.25rem" class="es">Testimonio de productor sobre
+            los resultados obtenidos</p>
+
+          <div class="video-box">
+            <img src="https://images.unsplash.com/photo-1723134085909-19da487ac9bd?w=900&h=500&fit=crop"
+              alt="Preview depoimento" />
+            <button class="play-btn"><i data-lucide="play" style="color:white;fill:white"></i></button>
+            <span class="video-nota">[ Adicionar link do vídeo ]</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA Sonda ───────────────────────── -->
+    <div class="cta-banner">
+      <div class="wrap">
+        <a href="https://wa.me/5565999999999" target="_blank" class="btn btn-ciano" style="font-size:1rem">
+          <i data-lucide="message-circle" style="width:18px;height:18px"></i>
+          <span class="pt">Solicitar Instalação de Sonda</span>
+          <span class="es">Solicitar Instalación de Sonda</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     PÁGINA: PRODUTOS
+══════════════════════════════════════════════════════════════════ -->
+  <div id="pg-produtos" class="pagina">
+
+    <!-- ── Cabeçalho ───────────────────────── -->
+    <div class="pg-header">
+      <div class="wrap">
+        <h1 class="pt">Equipamentos Elétricos</h1>
+        <h1 class="es">Equipos Eléctricos</h1>
+        <p class="pt">Produtos de qualidade com suporte técnico especializado</p>
+        <p class="es">Productos de calidad con soporte técnico especializado</p>
+      </div>
+    </div>
+
+    <!-- ── Grid de Produtos ────────────────── -->
+    <section class="secao">
+      <div class="wrap">
+
+        <p
+          style="text-align:center;font-size:.85rem;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:.75rem;max-width:500px;margin:0 auto 2.5rem">
+          <span class="pt">Clique em "Consultar" para receber preços e informações via WhatsApp</span>
+          <span class="es">Haga clic en "Consultar" para recibir precios e información por WhatsApp</span>
+        </p>
+
+        <div class="grade-4">
+
+          <!-- Sensor de Oxigênio -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="activity" style="color:var(--cyan)"></i>
+              <span class="prod-cat cat-cyan">Sondas</span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Sensor de Oxigênio Dissolvido</h4>
+              <h4 class="es">Sensor de Oxígeno Disuelto</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Sensor%20de%20Oxig%C3%AAnio"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sonda Multiparâmetro -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="wifi" style="color:var(--cyan)"></i>
+              <span class="prod-cat cat-cyan">Sondas</span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Sonda Multiparâmetro</h4>
+              <h4 class="es">Sonda Multiparámetro</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Sonda%20Multipar%C3%A2metro"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Painel de Comando -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="layout-grid" style="color:var(--orange)"></i>
+              <span class="prod-cat cat-orange">
+                <span class="pt">Painéis</span><span class="es">Tableros</span>
+              </span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Painel de Comando Industrial</h4>
+              <h4 class="es">Tablero de Comando Ind.</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Painel%20de%20Comando"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Inversor de Frequência -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="settings" style="color:var(--orange)"></i>
+              <span class="prod-cat cat-orange">
+                <span class="pt">Automação</span><span class="es">Automatiz.</span>
+              </span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Inversor de Frequência</h4>
+              <h4 class="es">Variador de Frecuencia</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Inversor%20de%20Frequ%C3%AAncia"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sensor de Temperatura -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="thermometer" style="color:var(--cyan)"></i>
+              <span class="prod-cat cat-cyan">Sondas</span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Sensor de Temperatura</h4>
+              <h4 class="es">Sensor de Temperatura</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Sensor%20de%20Temperatura"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Controlador de Nível -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="gauge" style="color:var(--orange)"></i>
+              <span class="prod-cat cat-orange">
+                <span class="pt">Automação</span><span class="es">Automatiz.</span>
+              </span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Controlador de Nível</h4>
+              <h4 class="es">Controlador de Nivel</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Controlador%20de%20N%C3%ADvel"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nobreak Industrial -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="battery-charging" style="color:var(--muted)"></i>
+              <span class="prod-cat cat-muted">
+                <span class="pt">Geral</span><span class="es">General</span>
+              </span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Nobreak Industrial</h4>
+              <h4 class="es">UPS Industrial</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Nobreak%20Industrial"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cabo Submersível -->
+          <div class="prod-card">
+            <div class="prod-visual">
+              <i data-lucide="cable" style="color:var(--muted)"></i>
+              <span class="prod-cat cat-muted">
+                <span class="pt">Acessórios</span><span class="es">Accesorios</span>
+              </span>
+            </div>
+            <div class="prod-corpo">
+              <h4 class="pt">Cabo Submersível</h4>
+              <h4 class="es">Cable Sumergible</h4>
+              <a href="https://wa.me/5565999999999?text=Quero%20informa%C3%A7%C3%B5es%20sobre%3A%20Cabo%20Submers%C3%ADvel"
+                target="_blank" class="prod-btn">
+                <i data-lucide="message-circle"></i>
+                <span class="pt">Consultar via WhatsApp</span><span class="es">Consultar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     PÁGINA: FAQ
+══════════════════════════════════════════════════════════════════ -->
+  <div id="pg-faq" class="pagina">
+
+    <!-- ── Cabeçalho ───────────────────────── -->
+    <div class="pg-header">
+      <div class="wrap">
+        <h1 class="pt">Perguntas Frequentes</h1>
+        <h1 class="es">Preguntas Frecuentes</h1>
+        <p class="pt">Tire suas dúvidas sobre nossos serviços</p>
+        <p class="es">Resuelva sus dudas sobre nuestros servicios</p>
+      </div>
+    </div>
+
+    <!-- ── Accordion FAQ ───────────────────── -->
+    <section class="secao">
+      <div class="wrap" style="max-width:720px">
+
+        <!-- Pergunta 1 -->
+        <div class="faq-item pt">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            O que é uma sonda de monitoramento para tanques?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">É um equipamento instalado dentro do tanque que mede parâmetros como oxigênio
+            dissolvido, temperatura e pH. Os dados são transmitidos em tempo real para um painel de controle ou celular.
+          </div>
+        </div>
+        <div class="faq-item es">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            ¿Qué es una sonda de monitoreo para tanques?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Es un equipo instalado dentro del tanque que mide parámetros como oxígeno disuelto,
+            temperatura y pH. Los datos se transmiten en tiempo real a un panel de control o móvil.</div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="faq-item pt">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            A sonda serve para qualquer tamanho de tanque?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Sim. Fazemos um estudo prévio para definir quantidade e posicionamento ideal, seja
+            em pequenos tanques ou grandes viveiros.</div>
+        </div>
+        <div class="faq-item es">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            ¿La sonda sirve para cualquier tamaño de tanque?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Sí. Hacemos un estudio previo para definir cantidad y posicionamiento ideal, ya sea
+            en pequeños tanques o grandes estanques.</div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="faq-item pt">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            Qual a diferença entre sonda mono e multiparâmetro?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">A monoparâmetro mede apenas um indicador. A multiparâmetro mede O₂, temperatura, pH
+            e outros de uma vez. A escolha depende do tamanho e necessidade da operação.</div>
+        </div>
+        <div class="faq-item es">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            ¿Diferencia entre sonda mono y multiparámetro?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">La monoparámetro mide solo un indicador. La multiparámetro mide O₂, temperatura, pH
+            y otros a la vez.</div>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="faq-item pt">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            Que serviços de automação vocês oferecem?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Programação de CLPs, montagem de painéis, instalação de inversores de frequência e
+            sistemas de supervisão SCADA.</div>
+        </div>
+        <div class="faq-item es">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            ¿Qué servicios de automatización ofrecen?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Programación de PLCs, montaje de tableros, instalación de variadores de frecuencia y
+            sistemas SCADA.</div>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="faq-item pt">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            Como funciona a manutenção elétrica?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Oferecemos manutenção preventiva (agendada) e corretiva (emergência). Emitimos
+            laudos técnicos de cada intervenção.</div>
+        </div>
+        <div class="faq-item es">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            ¿Cómo funciona el mantenimiento eléctrico?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Ofrecemos mantenimiento preventivo y correctivo. Emitimos informes técnicos de cada
+            intervención.</div>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="faq-item pt">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            Como solicitar um orçamento?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Pelo WhatsApp ou Instagram. Retornamos rapidamente com atendimento personalizado.
+          </div>
+        </div>
+        <div class="faq-item es">
+          <button class="faq-pergunta" onclick="toggleFaq(this)">
+            ¿Cómo solicitar un presupuesto?
+            <span class="faq-seta"><i data-lucide="chevron-down"></i></span>
+          </button>
+          <div class="faq-resposta">Por WhatsApp o Instagram. Respondemos rápidamente con atención personalizada.</div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align:center;margin-top:2.5rem">
+          <a href="https://wa.me/5565999999999" target="_blank" class="btn btn-laranja">
+            <i data-lucide="message-circle" style="width:16px;height:16px"></i>
+            <span class="pt">Falar no WhatsApp</span><span class="es">Hablar por WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     PÁGINA: CONTATO
+══════════════════════════════════════════════════════════════════ -->
+  <div id="pg-contato" class="pagina">
+
+    <!-- ── Cabeçalho ───────────────────────── -->
+    <div class="pg-header">
+      <div class="wrap">
+        <h1 class="pt">Informações &amp; Contato</h1>
+        <h1 class="es">Información &amp; Contacto</h1>
+        <p class="pt">Conheça nossos canais diretos de atendimento, horários e localização</p>
+        <p class="es">Conozca nuestros canales directos de atención, horarios y ubicación</p>
+      </div>
+    </div>
+
+    <!-- ── Informações da Loja / Empresa ────── -->
+    <section class="secao">
+      <div class="wrap">
+        <div class="grade-2" style="align-items:start;margin-bottom:2.5rem">
+
+          <!-- Coluna 1: Canais de Atendimento & Horários -->
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+
+            <!-- Card: Canais Diretos -->
+            <div class="card">
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--orange)" class="pt">
+                <i data-lucide="phone-call" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Canais de Atendimento
+              </h3>
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--orange)" class="es">
+                <i data-lucide="phone-call" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Canales de Atención
+              </h3>
+
+              <div style="display:flex;flex-direction:column;gap:.75rem">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5565999999999" target="_blank" class="contato-card" style="margin-bottom:0">
+                  <div class="contato-icone" style="background:rgba(37,211,102,.15)">
+                    <i data-lucide="message-circle" style="color:#25d366"></i>
+                  </div>
+                  <div>
+                    <strong class="pt">WhatsApp (Atendimento Rápido)</strong>
+                    <strong class="es">WhatsApp (Atención Rápida)</strong>
+                    <small>+55 (65) 9 9999-9999</small>
+                  </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/eletrotech_marechal" target="_blank" class="contato-card"
+                  style="margin-bottom:0">
+                  <div class="contato-icone" style="background:rgba(225,48,108,.15)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Instagram</strong>
+                    <small>@eletrotech_marechal</small>
+                  </div>
+                </a>
+
+                <!-- E-mail -->
+                <a href="mailto:contato@eletrotechmarechal.com.br" class="contato-card" style="margin-bottom:0">
+                  <div class="contato-icone" style="background:rgba(23,184,212,.15)">
+                    <i data-lucide="mail" style="color:var(--cyan)"></i>
+                  </div>
+                  <div>
+                    <strong class="pt">E-mail Institucional</strong>
+                    <strong class="es">Correo Institucional</strong>
+                    <small>contato@eletrotechmarechal.com.br</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card: Horários -->
+            <div class="card">
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--cyan)" class="pt">
+                <i data-lucide="clock" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Horário de Atendimento
+              </h3>
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--cyan)" class="es">
+                <i data-lucide="clock" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Horario de Atención
+              </h3>
+
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:.75rem;font-size:.9rem">
+                <li
+                  style="display:flex;justify-content:space-between;padding-bottom:.5rem;border-bottom:1px solid var(--border)">
+                  <span style="color:var(--muted)" class="pt">Segunda a Sexta-feira:</span>
+                  <span style="color:var(--muted)" class="es">Lunes a Viernes:</span>
+                  <strong style="color:#fff">07:00 às 18:00</strong>
+                </li>
+                <li
+                  style="display:flex;justify-content:space-between;padding-bottom:.5rem;border-bottom:1px solid var(--border)">
+                  <span style="color:var(--muted)" class="pt">Sábado:</span>
+                  <span style="color:var(--muted)" class="es">Sábado:</span>
+                  <strong style="color:#fff">07:30 às 12:00</strong>
+                </li>
+                <li style="display:flex;justify-content:space-between">
+                  <span style="color:var(--muted)" class="pt">Domingos e Feriados:</span>
+                  <span style="color:var(--muted)" class="es">Domingos y Feriados:</span>
+                  <strong style="color:var(--orange)" class="pt">Plantão de Suporte</strong>
+                  <strong style="color:var(--orange)" class="es">Guardia de Soporte</strong>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Coluna 2: Localização, Área de Cobertura e Informações da Loja -->
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+
+            <!-- Card: Localização e Atendimento -->
+            <div class="card">
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--orange)" class="pt">
+                <i data-lucide="map-pin" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Localização &amp; Cobertura
+              </h3>
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--orange)" class="es">
+                <i data-lucide="map-pin" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Ubicación &amp; Cobertura
+              </h3>
+
+              <div style="margin-bottom:1.25rem">
+                <strong style="display:block;font-size:.95rem;margin-bottom:.25rem" class="pt">Sede e Operações</strong>
+                <strong style="display:block;font-size:.95rem;margin-bottom:.25rem" class="es">Sede y
+                  Operaciones</strong>
+                <p style="font-size:.875rem;color:var(--muted);line-height:1.6" class="pt">
+                  Mato Grosso, Brasil &mdash; Atendimento técnico presencial a produtores rurais, pisciculturas e
+                  indústrias em toda a região Centro-Oeste.
+                </p>
+                <p style="font-size:.875rem;color:var(--muted);line-height:1.6" class="es">
+                  Mato Grosso, Brasil &mdash; Atención técnica presencial a productores rurales, pisciculturas e
+                  industrias en toda la región Centro-Oeste.
+                </p>
+              </div>
+
+              <div style="padding-top:1rem;border-top:1px solid var(--border)">
+                <strong style="display:block;font-size:.95rem;margin-bottom:.25rem" class="pt">Expansão
+                  Internacional</strong>
+                <strong style="display:block;font-size:.95rem;margin-bottom:.25rem" class="es">Expansión
+                  Internacional</strong>
+                <p style="font-size:.875rem;color:var(--muted);line-height:1.6" class="pt">
+                  Projetos e instalação de sistemas elétricos e sondas em andamento para o Paraguai.
+                </p>
+                <p style="font-size:.875rem;color:var(--muted);line-height:1.6" class="es">
+                  Proyectos e instalación de sistemas eléctricos y sondas en curso para Paraguay.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card: Informações da Loja / Serviços Prestados -->
+            <div class="card">
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--cyan)" class="pt">
+                <i data-lucide="building-2" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Sobre a Empresa
+              </h3>
+              <h3 style="font-size:1.3rem;margin-bottom:1rem;color:var(--cyan)" class="es">
+                <i data-lucide="building-2" style="width:20px;height:20px;vertical-align:middle;margin-right:6px"></i>
+                Sobre la Empresa
+              </h3>
+
+              <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:1rem" class="pt">
+                A <strong>Eletrotech Marechal</strong> conta com quase 7 anos de experiência, sendo referência em
+                sistemas elétricos, automação industrial, montagem de painéis e sondas inteligentes para piscicultura
+                (O₂XilifeFish).
+              </p>
+              <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:1rem" class="es">
+                <strong>Eletrotech Marechal</strong> cuenta con casi 7 años de experiencia, siendo referente en sistemas
+                eléctricos, automatización industrial, tableros de comando y sondas inteligentes para piscicultura
+                (O₂XilifeFish).
+              </p>
+
+              <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+                <span class="prod-cat cat-orange"><span class="pt">Manutenção Elétrica</span><span
+                    class="es">Mantenimiento Eléctrico</span></span>
+                <span class="prod-cat cat-cyan">Piscicultura &amp; Sondas</span>
+                <span class="prod-cat cat-orange"><span class="pt">Automação Industrial</span><span
+                    class="es">Automatización Ind.</span></span>
+                <span class="prod-cat cat-cyan"><span class="pt">Painéis de Comando</span><span class="es">Tableros de
+                    Comando</span></span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Banner de Ação Direta WhatsApp -->
+        <div class="cta-banner" style="border-radius:12px;border:1px solid var(--border);padding:3rem 1.5rem">
+          <div class="wrap" style="max-width:680px">
+            <h2 class="pt">Fale Diretamente com Nossos Especialistas</h2>
+            <h2 class="es">Hable Directamente con Nuestros Especialistas</h2>
+            <p class="pt" style="margin-bottom:1.5rem">Tire dúvidas técnicas ou solicite um orçamento rápido e sem
+              burocracia via WhatsApp.</p>
+            <p class="es" style="margin-bottom:1.5rem">Resuelva dudas técnicas o solicite un presupuesto rápido y sin
+              burocracia por WhatsApp.</p>
+            <a href="https://wa.me/5565999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Eletrotech"
+              target="_blank" class="btn btn-laranja"
+              style="font-size:1.05rem;padding:.9rem 2rem;display:inline-flex;align-items:center;gap:.6rem">
+              <i data-lucide="message-circle" style="width:20px;height:20px"></i>
+              <span class="pt">Iniciar Conversa no WhatsApp</span>
+              <span class="es">Iniciar Conversación en WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="wrap">
+
+      <div class="footer-grade">
+
+        <!-- Coluna: Logo + descrição -->
+        <div>
+          <svg viewBox="0 0 500 130" height="56" fill="none" xmlns="http://www.w3.org/2000/svg"
+            style="margin-bottom:1rem">
+            <text x="4" y="80" fill="white" font-family="'Bebas Neue',sans-serif" font-size="84"
+              letter-spacing="4">ELETR</text>
+            <circle cx="252" cy="46" r="44" fill="#f07828" />
+            <circle cx="252" cy="46" r="44" fill="none" stroke="white" stroke-width="4" />
+            <path d="M264,18 L240,52 L254,52 L238,74 L264,40 L250,40 Z" fill="white" />
+            <text x="298" y="80" fill="white" font-family="'Bebas Neue',sans-serif" font-size="84"
+              letter-spacing="4">TECH</text>
+            <text x="222" y="103" fill="#f07828" font-family="'Dancing Script','Brush Script MT',cursive" font-size="36"
+              font-weight="700">Marechal</text>
+            <text x="250" y="125" fill="#f07828" font-family="'Bebas Neue',sans-serif" font-size="18" letter-spacing="7"
+              text-anchor="middle">SISTEMAS ELÉTRICOS</text>
+          </svg>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.7" class="pt">Especialistas em sistemas elétricos
+            para campo e indústria.</p>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.7" class="es">Especialistas en sistemas eléctricos
+            para campo e industria.</p>
+        </div>
+
+        <!-- Coluna: Menu -->
+        <div>
+          <span class="footer-titulo">Menu</span>
+          <ul class="footer-links">
+            <li><button onclick="ir('home')"><span class="pt">Início</span><span class="es">Inicio</span></button></li>
+            <li><button onclick="ir('sobre')">Sobre</button></li>
+            <li><button onclick="ir('piscicultura')">Piscicultura</button></li>
+            <li><button onclick="ir('produtos')"><span class="pt">Produtos</span><span
+                  class="es">Productos</span></button></li>
+            <li><button onclick="ir('faq')">FAQ</button></li>
+            <li><button onclick="ir('contato')"><span class="pt">Contato</span><span class="es">Contacto</span></button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Coluna: Contato -->
+        <div>
+          <span class="footer-titulo">Contato</span>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/5565999999999" target="_blank">WhatsApp</a></li>
+            <li><a href="https://instagram.com/eletrotech_marechal" target="_blank">Instagram</a></li>
+            <li><span style="color:var(--muted);font-size:.875rem">Mato Grosso, BR</span></li>
+          </ul>
+        </div>
+
+        <!-- Coluna: Serviços -->
+        <div>
+          <span class="footer-titulo pt">Serviços</span>
+          <span class="footer-titulo es">Servicios</span>
+          <ul class="footer-links">
+            <li><button onclick="ir('piscicultura')"><span class="pt">Manutenção Elétrica</span><span
+                  class="es">Mantenimiento Eléctrico</span></button></li>
+            <li><button onclick="ir('piscicultura')"><span class="pt">Automação Industrial</span><span
+                  class="es">Automatización Industrial</span></button></li>
+            <li><button onclick="ir('piscicultura')">Piscicultura / Sondas</button></li>
+            <li><button onclick="ir('piscicultura')"><span class="pt">Painéis de Comando</span><span class="es">Tableros
+                  de Comando</span></button></li>
+            <li><button onclick="ir('produtos')"><span class="pt">Equipamentos</span><span
+                  class="es">Equipos</span></button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Rodapé inferior -->
+      <div class="footer-rodape">
+        <span class="copy">
+          &copy; <span id="ano"></span> Eletrotech Marechal.
+          <span class="pt">Todos os direitos reservados.</span>
+          <span class="es">Todos los derechos reservados.</span>
+        </span>
+        <div class="footer-social">
+          <a href="https://wa.me/5565999999999" target="_blank">
+            <i data-lucide="message-circle"></i> WhatsApp
+          </a>
+          <a href="https://instagram.com/eletrotech_marechal" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- FAB WhatsApp (fixo no canto inferior direito) -->
+  <a href="https://wa.me/5565999999999" target="_blank" class="wa-fab">
+    <i data-lucide="message-circle"></i>
+    <span class="pt">Falar no WhatsApp</span><span class="es">Hablar por WhatsApp</span>
+  </a>
+
+
+  <!-- JavaScript (ao final do body para garantir que o DOM carregou) -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
