@@ -62,7 +62,7 @@ Os projetos serão adicionados conforme o andamento das disciplinas, mantendo um
 - Marcos Penteado
 - Pedro Augusto
 - Rafael Hachbarth
-- Rogério
+- Rogério Emanuel 
 
 ---
 
